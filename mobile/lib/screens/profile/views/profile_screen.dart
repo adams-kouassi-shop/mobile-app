@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:shop/components/list_tile/divider_list_tile.dart';
-import 'package:shop/components/network_image_with_loader.dart';
 import 'package:shop/constants.dart';
 import 'package:shop/route/screen_export.dart';
+import 'package:shop/screens/order/views/adress_screen.dart';
 import 'package:shop/screens/product/views/list_envie_screen.dart';
 import 'package:shop/screens/order/views/ordered_screen.dart';
 import 'package:shop/screens/product/views/note_screen.dart';
@@ -27,7 +26,7 @@ class ProfileScreen extends StatelessWidget {
             // proLableText: "Sliver",
             // isPro: true, if the user is pro
             press: () {
-              Navigator.pushNamed(context, userInfoScreenRoute);
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>UserInfoScreen()));
             },
           ),
           /*Padding(
@@ -51,6 +50,7 @@ class ProfileScreen extends StatelessWidget {
             padding: EdgeInsets.all(12),
               child: Text("Mon compte .......", style: Theme.of(context).textTheme.titleSmall,)
           ),
+
           SizedBox(height: defaultPadding / 2),
           ProfileMenuListTile(
             text: "Mes commandes",
@@ -58,6 +58,7 @@ class ProfileScreen extends StatelessWidget {
             press: () {
               Navigator.push(context, MaterialPageRoute(builder: (context)=> OrderedScreen()));
             },
+            isShowDivider: false,
           ),
           ProfileMenuListTile(
             text: "Ma liste d'envie",
@@ -65,19 +66,13 @@ class ProfileScreen extends StatelessWidget {
             press: () {
               Navigator.push(context, MaterialPageRoute(builder: (context)=>ListEnvieScreen()));
             },
+            isShowDivider: false,
           ),
           ProfileMenuListTile(
             text: "Notes et avis",
             svgSrc: "assets/icons/Like.svg",
             press: () {
               Navigator.push(context, MaterialPageRoute(builder: (context)=>(NoteScreen())));
-            },
-          ),
-          ProfileMenuListTile(
-            text: "Adresse",
-            svgSrc: "assets/icons/Address.svg",
-            press: () {
-              Navigator.pushNamed(context, addressesScreenRoute);
             },
           ),
           /*ProfileMenuListTile(
@@ -96,67 +91,49 @@ class ProfileScreen extends StatelessWidget {
           ),*/
           SizedBox(height: defaultPadding),
           Padding(
-            padding: EdgeInsets.symmetric(
-                horizontal: defaultPadding, vertical: defaultPadding / 2),
-            child: Text(
-              "Personalization",
-              style: Theme.of(context).textTheme.titleSmall,
-            ),
-          ),
-          DividerListTileWithTrilingText(
-            svgSrc: "assets/icons/Notification.svg",
-            title: "Notification",
-            trilingText: "On",
-            press: () {
-              Navigator.pushNamed(context, enableNotificationScreenRoute);
-            },
-          ),
-          ProfileMenuListTile(
-            text: "Preferences",
-            svgSrc: "assets/icons/Preferences.svg",
-            press: () {
-              Navigator.pushNamed(context, preferencesScreenRoute);
-            },
-          ),
-          SizedBox(height: defaultPadding),
-          Padding(
             padding: const EdgeInsets.symmetric(
                 horizontal: defaultPadding, vertical: defaultPadding / 2),
-            child: Text("Settings", style: Theme.of(context).textTheme.titleSmall,),
+            child: Text("Paramètres", style: Theme.of(context).textTheme.titleSmall,),
           ),
           ProfileMenuListTile(
-            text: "Language",
+            text: "Langue",
             svgSrc: "assets/icons/Language.svg",
-            press: () {
-              Navigator.pushNamed(context, selectLanguageScreenRoute);
-            },
+            press: () {},
+            isShowDivider: false,
           ),
           ProfileMenuListTile(
-            text: "Location",
+            text: "Notification",
+            svgSrc: "assets/icons/Notification.svg",
+            press: () {
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>NoNotificationScreen()));
+            },
+            isShowDivider: false,
+          ),
+          ProfileMenuListTile(
+            text: "Adresse",
             svgSrc: "assets/icons/Location.svg",
-            press: () {},
+            press: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>AdressScreen()));
+            },
+            isShowDivider: true,
           ),
           SizedBox(height: defaultPadding),
           Padding(
             padding: const EdgeInsets.symmetric(
                 horizontal: defaultPadding, vertical: defaultPadding / 2),
-            child: Text(
-              "Help & Support",
-              style: Theme.of(context).textTheme.titleSmall,
-            ),
+            child: Text("Politique de confidentialité", style: Theme.of(context).textTheme.titleSmall,),
           ),
           ProfileMenuListTile(
-            text: "Get Help",
+            text: "Aide",
             svgSrc: "assets/icons/Help.svg",
-            press: () {
-              Navigator.pushNamed(context, getHelpScreenRoute);
-            },
+            press: () {},
+            isShowDivider: false,
           ),
           ProfileMenuListTile(
             text: "FAQ",
             svgSrc: "assets/icons/FAQ.svg",
             press: () {},
-            isShowDivider: false,
+            isShowDivider: true,
           ),
           SizedBox(height: defaultPadding),
 
@@ -173,10 +150,7 @@ class ProfileScreen extends StatelessWidget {
                 BlendMode.srcIn,
               ),
             ),
-            title: const Text(
-              "Log Out",
-              style: TextStyle(color: errorColor, fontSize: 14, height: 1),
-            ),
+            title: const Text("Se déconnecter", style: TextStyle(color: errorColor, fontSize: 14, height: 1),),
           )
         ],
       ),

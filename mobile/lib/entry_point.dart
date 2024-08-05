@@ -50,7 +50,7 @@ class _EntryPointState extends State<EntryPoint> {
           ),
           IconButton(
             onPressed: () {
-              Navigator.pushNamed(context, notificationsScreenRoute);
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>NoNotificationScreen()));
             },
             icon: SvgPicture.asset("assets/icons/Notification.svg",
               height: 24,

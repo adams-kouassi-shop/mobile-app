@@ -25,8 +25,15 @@ class LogInForm extends StatelessWidget {
             textInputAction: TextInputAction.next,
             keyboardType: TextInputType.emailAddress,
             decoration: InputDecoration(
-              hintText: "Addresse Email",
-              prefixIcon: Padding(padding: const EdgeInsets.symmetric(vertical: defaultPadding * 0.75),
+              hintText: "Adresse Email",
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10.0),
+                borderSide: BorderSide(
+                  color: primaryColor,
+                ),
+              ),
+              contentPadding: EdgeInsets.all(12),
+              suffixIcon: Padding(padding: const EdgeInsets.symmetric(vertical: defaultPadding * 0.75),
                 child: SvgPicture.asset("assets/icons/Message.svg", height: 24, width: 24,
                   colorFilter: ColorFilter.mode(Theme.of(context).textTheme.bodyLarge!.color!.withOpacity(0.3), BlendMode.srcIn),
                 ),
@@ -39,10 +46,16 @@ class LogInForm extends StatelessWidget {
               // Password
             },
             validator: passwordValidator.call,
-            obscureText: true,
             decoration: InputDecoration(
               hintText: "Mot de passe",
-              prefixIcon: Padding(
+              contentPadding: EdgeInsets.all(12),
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10.0),
+                borderSide: BorderSide(
+                  color: primaryColor,
+                ),
+              ),
+              suffixIcon: Padding(
                 padding:
                     const EdgeInsets.symmetric(vertical: defaultPadding * 0.75),
                 child: SvgPicture.asset(
