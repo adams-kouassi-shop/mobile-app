@@ -16,7 +16,6 @@ class _CommandeStatutState extends State<CommandeStatut> {
     Size size = MediaQuery.sizeOf(context);
     return Scaffold(
       appBar:  AppBar(
-        elevation: 0,
         leading: IconButton(
           onPressed: (){Navigator.pop(context);},
           icon: Icon(Icons.chevron_left,color: whiteColor,),
@@ -42,6 +41,7 @@ class _CommandeStatutState extends State<CommandeStatut> {
       body: Container(
         padding: EdgeInsets.all(20),
         child: Timeline.tileBuilder(
+
           builder: TimelineTileBuilder.fromStyle(
             indicatorStyle: IndicatorStyle.dot,
             connectorStyle: ConnectorStyle.solidLine,
@@ -76,6 +76,8 @@ class _CommandeStatutState extends State<CommandeStatut> {
             ),
           ),
           theme: TimelineTheme.of(context).copyWith(nodePosition: 0,),
+
+
         ),
       ),
     );

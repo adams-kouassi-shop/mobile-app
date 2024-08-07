@@ -1,6 +1,6 @@
 import 'package:ecommerce/presentation/components/products/product_card.dart';
 import 'package:ecommerce/presentation/const/constants.dart';
-import 'package:ecommerce/presentation/screen/products/order/order_details_screen.dart';
+import 'package:ecommerce/presentation/screen/order/views/order_details_screen.dart';
 import 'package:ecommerce/presentation/screen/products/product_details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';

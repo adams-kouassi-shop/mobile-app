@@ -34,10 +34,10 @@ class _bottomNavigationBarState extends State<bottomNavigationBar> {
               Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> BoutiqueScreen()));
             }
             if(value==3){
-              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const CartScreen()));
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>const CartScreen()));
             }
             if(value==4){
-              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> ProfilScreen()));
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> ProfileScreen()));
             }
           });
         },

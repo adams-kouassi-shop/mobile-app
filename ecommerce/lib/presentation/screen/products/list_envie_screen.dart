@@ -17,7 +17,7 @@ class _ListEnvieScreenState extends State<ListEnvieScreen> {
       appBar:  AppBar(
         leading: IconButton(
           onPressed: (){Navigator.pop(context);},
-          icon: Icon(Icons.chevron_left,color: blackColor,),
+          icon: Icon(Icons.chevron_left,color: whiteColor,),
         ),
         centerTitle: true,
         title: Text("Ma liste d'envie"),

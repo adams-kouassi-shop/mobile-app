@@ -1,4 +1,5 @@
 import 'package:ecommerce/presentation/const/constants.dart';
+import 'package:ecommerce/presentation/screen/products/rating_product.dart';
 import 'package:flutter/material.dart';
 import 'package:badges/badges.dart' as badges;
 
@@ -18,7 +19,7 @@ class _NoteScreenState extends State<NoteScreen> {
       appBar:  AppBar(
         leading: IconButton(
           onPressed: (){Navigator.pop(context);},
-          icon: Icon(Icons.chevron_left,color: blackColor,),
+          icon: Icon(Icons.chevron_left,color: whiteColor,),
         ),
         centerTitle: true,
         title: Text("Notes et avis"),
@@ -70,7 +71,9 @@ class _NoteScreenState extends State<NoteScreen> {
                               onLongPress: (){
                                 print('object');
                               },
-                              onTap: (){},
+                              onTap: (){
+                                Navigator.push(context, MaterialPageRoute(builder: (context)=>RatingProduct()));
+                              },
                               leading: Container(
                                 height: 80,
                                 width: 80,

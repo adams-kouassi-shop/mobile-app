@@ -1,6 +1,7 @@
 import 'package:ecommerce/presentation/const/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:badges/badges.dart' as badges;
 
 class AdressScreen extends StatefulWidget {
   const AdressScreen({super.key});
@@ -14,23 +15,20 @@ class _AdressScreenState extends State<AdressScreen> {
   bool update  = false;
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.sizeOf(context);
     return Scaffold(
       backgroundColor: whiteColor,
       appBar: AppBar(
-        backgroundColor: whiteColor,
-        elevation: 0,
         leading: IconButton(
           onPressed: (){Navigator.pop(context);},
           icon: Icon(Icons.chevron_left,color: blackColor,),
         ),
-        title: Text('Modifier son adresse',style: TextStyle(color: blackColor),)
+        title: Text('Modifier son adresseu'),
       ),
       body: ListView(
         children: [
           if(update)
             Padding(
-              padding: EdgeInsets.only(top: size.height*0.04,left: 12,right: 12,bottom: 12),
+              padding: const EdgeInsets.all(12.0),
               child: Container(
                 padding: EdgeInsets.all(4),
                 decoration: BoxDecoration(
@@ -189,7 +187,7 @@ class _AdressScreenState extends State<AdressScreen> {
             )
           else
             Padding(
-              padding: EdgeInsets.only(top: size.height*0.1,left: 12,right: 12,bottom: 12),
+            padding: const EdgeInsets.all(12.0),
             child: Container(
               padding: EdgeInsets.all(4),
               decoration: BoxDecoration(

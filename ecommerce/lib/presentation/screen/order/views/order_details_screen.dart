@@ -1,5 +1,5 @@
 import 'package:ecommerce/presentation/const/constants.dart';
-import 'package:ecommerce/presentation/screen/products/order/commande_statut.dart';
+import 'package:ecommerce/presentation/screen/order/views/commande_statut.dart';
 import 'package:flutter/material.dart';
 import 'package:badges/badges.dart' as badges;
 
@@ -15,10 +15,9 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:  AppBar(
-        elevation: 0,
         leading: IconButton(
           onPressed: (){Navigator.pop(context);},
-          icon: Icon(Icons.chevron_left,color: whiteColor),
+          icon: Icon(Icons.chevron_left,color: whiteColor,),
         ),
         centerTitle: true,
         title: Text('Détails  commandes'),

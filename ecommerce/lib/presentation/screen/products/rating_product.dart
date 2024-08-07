@@ -21,7 +21,7 @@ class _RatingProductState extends State<RatingProduct> {
       appBar: AppBar(
         leading: IconButton(
           onPressed: (){Navigator.pop(context);},
-          icon: Icon(Icons.chevron_left,color: blackColor,),
+          icon: Icon(Icons.chevron_left,color: whiteColor,),
         ),
         centerTitle: true,
         title: Text("Evaluez produit"),
