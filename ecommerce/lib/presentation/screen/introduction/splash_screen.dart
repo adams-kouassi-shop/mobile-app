@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:ecommerce/presentation/screen/auth/login_screen.dart';
 import 'package:ecommerce/presentation/screen/home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -27,7 +28,7 @@ class _Sp_Screen_2_OutputState extends State<SplashScreen> with SingleTickerProv
       if (status == AnimationStatus.completed) {
         _controller.reverse();
         setState(() {
-          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
+          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
         });
       } else if (status == AnimationStatus.dismissed) {
         _controller.forward();
