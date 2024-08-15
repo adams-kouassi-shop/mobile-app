@@ -25,19 +25,19 @@ class _bottomNavigationBarState extends State<bottomNavigationBar> {
           setState(() {
             widget.selectedIndex = value;
             if(value==0){
-              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> HomeScreen()));
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> HomeScreen()));
             }
             if(value==1){
               Navigator.push(context, MaterialPageRoute(builder: (context)=> DiscoverScreen()));
             }
             if(value==2){
-              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> BoutiqueScreen()));
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> BoutiqueScreen()));
             }
             if(value==3){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>const CartScreen()));
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> CartScreen()));
             }
             if(value==4){
-              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> ProfileScreen()));
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> ProfileScreen()));
             }
           });
         },

@@ -19,12 +19,14 @@ class _BoutiqueScreenState extends State<BoutiqueScreen> {
     return WillPopScope(
       onWillPop: () => showExitPopup(context),
       child: Scaffold(
+        backgroundColor: whiteColor,
         appBar: AppBar(
+          elevation: 0,
           leading: IconButton(
             onPressed: (){Navigator.pop(context);},
             icon: Icon(Icons.chevron_left,color: whiteColor),
           ),
-          title: Text('Details du produit',style: TextStyle(color: whiteColor),),
+          title: Text('Nos boutiques parténaires',style: TextStyle(color: whiteColor),),
           centerTitle: true,
           actions: [
             IconButton(

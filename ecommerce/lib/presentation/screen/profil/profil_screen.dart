@@ -8,6 +8,7 @@ import 'package:ecommerce/presentation/screen/order/views/ordered_screen.dart';
 import 'package:ecommerce/presentation/screen/products/list_envie_screen.dart';
 import 'package:ecommerce/presentation/screen/products/note_screen.dart';
 import 'package:ecommerce/presentation/screen/profil/adress_screen.dart';
+import 'package:ecommerce/presentation/screen/profil/user_infos_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -21,6 +22,15 @@ class ProfileScreen extends StatelessWidget {
     return WillPopScope(
       onWillPop: () => showExitPopup(context),
       child: Scaffold(
+        appBar: AppBar(
+          elevation: 0,
+          leading: IconButton(
+            onPressed: (){Navigator.pop(context);},
+            icon: Icon(Icons.chevron_left,color: whiteColor,),
+          ),
+          title: Text('Profil utilisateur'),
+          centerTitle: true,
+        ),
         body: ListView(
           children: [
             ProfileCard(
@@ -30,7 +40,7 @@ class ProfileScreen extends StatelessWidget {
               // proLableText: "Sliver",
               // isPro: true, if the user is pro
               press: () {
-                //Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>UserInfoScreen()));
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>UserInfosScreen()));
               },
             ),
             /*Padding(
@@ -109,7 +119,7 @@ class ProfileScreen extends StatelessWidget {
               text: "Notification",
               svgSrc: "assets/icons/Notification.svg",
               press: () {
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>NotificationsScreen()));
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>NotificationsScreen()));
               },
               isShowDivider: false,
             ),
@@ -149,10 +159,7 @@ class ProfileScreen extends StatelessWidget {
                 "assets/icons/Logout.svg",
                 height: 24,
                 width: 24,
-                colorFilter: const ColorFilter.mode(
-                  errorColor,
-                  BlendMode.srcIn,
-                ),
+                colorFilter: const ColorFilter.mode(errorColor, BlendMode.srcIn,),
               ),
               title: const Text("Se déconnecter", style: TextStyle(color: errorColor, fontSize: 14, height: 1),),
             )

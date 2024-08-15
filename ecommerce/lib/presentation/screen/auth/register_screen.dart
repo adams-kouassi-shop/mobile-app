@@ -233,9 +233,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       ),
                       child: const Center(child: Text('Sign Up',style: TextStyle(fontSize: 20.0,color: Colors.white),)),
                     ),
-                    onTap: (){
-
-                    },
+                    onTap: (){},
                   ),
 
                 ],

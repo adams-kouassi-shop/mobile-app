@@ -32,7 +32,7 @@ class _ShowBoutiqueScreenState extends State<ShowBoutiqueScreen> {
             onPressed: () {},
             icon: badges.Badge(
               badgeContent: Text('${cartContent.length}',style: TextStyle(color: whiteColor,fontWeight: FontWeight.bold),),
-              child: Icon(Icons.shopping_cart,size: 30,),
+              child: Icon(Icons.shopping_cart,size: 30,color: blackColor,),
               badgeStyle: badges.BadgeStyle(
                 //shape: badges.BadgeShape.square,
                 badgeColor: Colors.red,

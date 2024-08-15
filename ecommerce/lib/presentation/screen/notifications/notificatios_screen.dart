@@ -28,6 +28,105 @@ class NotificationsScreen extends StatelessWidget {
           ),
         ],
       ),
+      body: SafeArea(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // While loading use 👇
+            // const Expanded(
+            //   child: DiscoverCategoriesSkelton(),
+            // ),
+            Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text('Liste des notifications'.toUpperCase(),style: TextStyle(color: blackColor,fontWeight: FontWeight.bold),),
+                      Text('12'.toUpperCase(),style: TextStyle(color: blackColor,fontWeight: FontWeight.bold),),
+                    ],
+                  ),
+                  Divider(color: greyColor,),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 4.0,left: 8,right: 4),
+                    child: Container(
+                      height: 80,
+                      padding: EdgeInsets.only(top: 4,bottom: 4),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.2),
+                            spreadRadius: 5,
+                            blurRadius: 7,
+                            offset: Offset(0, 3), // changes position of shadow
+                          ),
+                        ],
+                      ),
+                      child:  ListTile(
+                        onTap: (){},
+                        leading: Image.asset("assets/images/banner_2.jpg"),
+                        title: Text('Materiels informatiques'),
+                        trailing: Icon(Icons.chevron_right),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8.0,left: 4,right: 4),
+                    child: Container(
+                      height: 80,
+                      padding: EdgeInsets.only(top: 4,bottom: 4),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.2),
+                            spreadRadius: 5,
+                            blurRadius: 7,
+                            offset: Offset(0, 3), // changes position of shadow
+                          ),
+                        ],
+                      ),
+                      child:  ListTile(
+                        leading: Image.asset("assets/images/banner_2.jpg"),
+                        title: Text('Materiels informatiques'),
+                        trailing: Icon(Icons.chevron_right),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8.0,left: 4,right: 4),
+                    child: Container(
+                      height: 80,
+                      padding: EdgeInsets.only(top: 4,bottom: 4),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.2),
+                            spreadRadius: 5,
+                            blurRadius: 7,
+                            offset: Offset(0, 3), // changes position of shadow
+                          ),
+                        ],
+                      ),
+                      child:  ListTile(
+                        leading: Image.asset("assets/images/banner_2.jpg"),
+                        title: Text('Materiels informatiques'),
+                        trailing: Icon(Icons.chevron_right),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
     );
   }
 }
